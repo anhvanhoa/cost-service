@@ -1,7 +1,27 @@
 node_env: "development"
-url_db: "postgres://pg:123456@localhost:5432/cost_service_db?sslmode=disable"
+url_db: "postgres://postgres:123456@localhost:5432/cost_service_db?sslmode=disable"
 name_service: "CostService"
 port_grpc: 50056
 host_grpc: "localhost"
 interval_check: "20s"
 timeout_check: "15s"
+
+db_cache:
+    addr: 'localhost:6379'
+    db: 1
+    password: ''
+    max_idle: 10
+    max_active: 100
+    idle_timeout: 240
+    network: 'tcp'
+
+permission_service_addr: 'localhost:50051'
+
+grpc_clients:
+    - Name: 'PermissionService'
+      ServerAddress: 'localhost:50051'
+      MaxRetries: 3
+      Time: 20
+      Timeout: 15
+      PermitWithoutStream: true
+      SecretInternal: 'PermissionServiceSecret'
