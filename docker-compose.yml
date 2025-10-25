@@ -6,7 +6,7 @@ services:
       secrets:
         - github_token
     image: cost-service:latest
-    container_name: cost-service_app
+    container_name: cost_service_app
     ports:
       - "50061:50061"
     networks:
