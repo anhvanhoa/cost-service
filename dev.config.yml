@@ -1,5 +1,7 @@
 node_env: "development"
 url_db: "postgres://postgres:123456@localhost:5432/cost_service_db?sslmode=disable"
+access_secret: "your-access-jwt-secret-here"
+secret_service: "CostServiceSecret"
 name_service: "CostService"
 port_grpc: 40061
 host_grpc: "localhost"
